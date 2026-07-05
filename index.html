@@ -34,11 +34,11 @@
             padding: 2rem 1.5rem;
             margin: 0;
             
-            /* Usando una imagen como fondo */
-            background-image: url('tarjeta.png'); /* Reemplaza esto con tu URL */
-            background-size: cover; /* Hace que la imagen cubra toda la pantalla */
-            background-position: center; /* Centra la imagen */
-            background-attachment: fixed; /* Evita que la imagen se mueva al hacer scroll */
+            /* USANDO TU IMAGEN DE FONDO */
+            background-image: url('tarjeta.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
 
         .container {
@@ -66,23 +66,30 @@
             gap: 1rem;
         }
 
+        /* AJUSTES PARA LA IMAGEN DEL LOGO */
         .logo-container {
-            width: 90px;
-            height: 90px;
-            background-color: var(--texel-purple);
-            color: #ffffff;
+            width: 100px;
+            height: 100px;
+            background-color: transparent; /* Quitamos el fondo morado */
             border: 2px solid var(--border-color);
+            border-radius: 50%; /* Lo hace circular */
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            transform: rotate(-3deg);
+            overflow: hidden; /* Asegura que la imagen no se salga del círculo */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
             transition: transform 0.3s ease;
         }
         
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ajusta la imagen al contenedor */
+            object-position: center; /* Centra la imagen */
+        }
+
         .logo-container:hover {
-            transform: rotate(0deg) scale(1.05);
+            transform: scale(1.05);
         }
 
         .brand-name {
@@ -176,7 +183,10 @@
 
     <div class="container">
         <header class="header">
-            <div class="logo-container">T</div>
+            <!-- USANDO TU IMAGEN DE LOGO -->
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo de TEXEL" class="logo-img">
+            </div>
             <div>
                 <h1 class="brand-name">TEXEL 🦖</h1>
                 <p class="subtitle">Corte Láser & Diseño</p>

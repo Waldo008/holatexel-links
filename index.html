@@ -10,7 +10,7 @@
     
     <style>
         :root {
-            --bg-color: #0a0a0a;
+            --bg-color: #050505;
             --text-color: #ffffff;
             --texel-purple: #7e3bed;
             --texel-green: #8eff01;
@@ -32,10 +32,13 @@
             align-items: center;
             min-height: 100vh;
             padding: 2rem 1.5rem;
-            background-image: url('https://files.catbox.moe/2s8n2x.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            margin: 0;
+            
+            /* Usando una imagen como fondo */
+            background-image: url('tarjeta.png'); /* Reemplaza esto con tu URL */
+            background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+            background-position: center; /* Centra la imagen */
+            background-attachment: fixed; /* Evita que la imagen se mueva al hacer scroll */
         }
 
         .container {
@@ -45,10 +48,14 @@
             flex-direction: column;
             gap: 2rem;
             animation: fadeIn 0.8s ease-out;
-            background-color: rgba(0, 0, 0, 0.7);
+            /* Fondo de cristal para dejar traslucir las luces suavemente */
+            background-color: rgba(10, 10, 10, 0.3);
             padding: 2.5rem 2rem;
-            border: 2px solid var(--border-color);
-            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            border-radius: 4px;
         }
 
         .header {
@@ -71,6 +78,11 @@
             font-size: 2.5rem;
             font-weight: 700;
             transform: rotate(-3deg);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-container:hover {
+            transform: rotate(0deg) scale(1.05);
         }
 
         .brand-name {
@@ -91,7 +103,7 @@
         .description {
             font-size: 0.9rem;
             line-height: 1.5;
-            color: #ccc;
+            color: #dddddd;
         }
 
         .links-container {
@@ -105,17 +117,20 @@
             justify-content: space-between;
             align-items: center;
             text-decoration: none;
-            color: #000;
+            color: #ffffff;
             font-weight: 700;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.05);
             padding: 1rem;
-            border: 2px solid var(--border-color);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             transition: all 0.3s ease;
         }
 
         .link-btn:hover {
             background-color: var(--texel-green);
+            color: #000000;
+            border-color: var(--texel-green);
             transform: scale(1.02);
+            box-shadow: 0 0 15px rgba(142, 255, 1, 0.3);
         }
 
         .social-icons {
@@ -125,31 +140,35 @@
         }
 
         .social-icon {
-            color: #fff;
+            color: #ffffff;
             width: 45px;
             height: 45px;
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 1px solid #fff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background-color: rgba(255, 255, 255, 0.05);
             border-radius: 50%;
             transition: 0.3s;
             text-decoration: none;
         }
 
         .social-icon svg {
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
             fill: currentColor;
         }
 
         .social-icon:hover {
             background-color: var(--texel-purple);
+            border-color: var(--texel-purple);
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(126, 59, 237, 0.4);
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>

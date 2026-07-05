@@ -4,146 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TEXEL | Enlaces</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Importando Tailwind para un diseño limpio y moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        :root {
-            --bg-color: #050505;
-            --text-color: #ffffff;
-            --texel-purple: #7e3bed;
-            --texel-green: #8eff01;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
         body {
             font-family: 'Space Grotesk', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 2rem 1.5rem;
-            
-            /* Degradado HD disperso */
+            background-color: #050505;
             background-image: 
-                radial-gradient(circle at 15% 20%, rgba(142, 255, 1, 0.18) 0%, transparent 60%),
-                radial-gradient(circle at 85% 85%, rgba(126, 59, 237, 0.18) 0%, transparent 60%),
-                radial-gradient(circle at 60% 0%, rgba(142, 255, 1, 0.08) 0%, transparent 50%);
+                radial-gradient(circle at 15% 20%, rgba(126, 59, 237, 0.15) 0%, transparent 60%),
+                radial-gradient(circle at 85% 85%, rgba(142, 255, 1, 0.15) 0%, transparent 60%);
             background-attachment: fixed;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 400px;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2.5rem;
-            border-radius: 40px; /* Bordes muy redondos premium */
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            text-align: center;
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        .header { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
-
-        .logo-container {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            overflow: hidden;
-            background: #111;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            min-height: 100vh;
         }
         
-        .logo-img { width: 100%; height: 100%; object-fit: cover; }
-
-        .brand-name { font-size: 1.8rem; font-weight: 700; letter-spacing: -1px; text-transform: uppercase; }
-        .subtitle { font-size: 0.85rem; color: var(--texel-green); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.5rem; }
-        .description { font-size: 0.95rem; color: #b0b0b0; line-height: 1.6; padding: 0 1rem; }
-
-        .links-container { display: flex; flex-direction: column; gap: 12px; }
-
-        .link-btn {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: 600;
+        .glass-card {
             background: rgba(255, 255, 255, 0.03);
-            padding: 1.1rem;
-            border-radius: 50px; /* Estilo píldora */
+            backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
         }
 
-        .link-btn:hover {
-            background: var(--texel-purple);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(126, 59, 237, 0.3);
+        .pill-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .social-icons { display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; }
-        .social-icon {
-            color: #fff;
-            width: 48px;
-            height: 48px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
-            transition: 0.3s;
-            text-decoration: none;
+        .pill-btn:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #8eff01;
         }
-
-        .social-icon:hover { background: var(--texel-green); color: #000; transform: scale(1.1); }
-        .social-icon svg { width: 22px; height: 22px; fill: currentColor; }
-
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
-<body>
+<body class="flex items-center justify-center min-h-screen p-4">
 
-    <div class="container">
-        <header class="header">
-            <div class="logo-container">
-                <img src="logo.png" alt="Perfil" class="logo-img" onerror="this.style.display='none'; document.querySelector('.logo-container').innerHTML='T'">
-            </div>
-            <div>
-                <h1 class="brand-name">TEXEL</h1>
-                <p class="subtitle">Corte Láser & Diseño</p>
-                <p class="description">Materializamos el futuro de tu marca ⚡</p>
-            </div>
-        </header>
+    <div class="glass-card w-full max-w-sm rounded-[2rem] p-8 flex flex-col items-center text-center shadow-2xl">
+        
+        <!-- Logo -->
+        <div class="w-28 h-28 rounded-full overflow-hidden border-2 border-white/20 mb-6 shadow-xl">
+            <img src="logo.png" alt="TEXEL Logo" class="w-full h-full object-cover" onerror="this.style.display='none'; document.getElementById('fallback').style.display='flex'">
+            <div id="fallback" class="hidden w-full h-full bg-purple-600 items-center justify-center text-white text-3xl font-bold">T</div>
+        </div>
 
-        <main class="links-container">
-            <a href="#" class="link-btn">Ver Portafolio</a>
-            <a href="#" class="link-btn">Nuestros Servicios</a>
-            <a href="#" class="link-btn">Agenda una Asesoría</a>
-        </main>
+        <!-- Textos -->
+        <h1 class="text-3xl font-bold text-white mb-2 tracking-tight">TEXEL 🦖</h1>
+        <p class="text-lime-400 font-semibold uppercase tracking-widest text-sm mb-6">Corte Láser & Diseño</p>
+        <p class="text-gray-300 text-sm leading-relaxed mb-8 px-2">
+            Materializamos el futuro de tu marca ⚡<br>
+            Diseño Integral con Manufactura láser de clase mundial.
+        </p>
 
-        <footer class="social-icons">
-            <a href="#" class="social-icon" aria-label="Instagram">
-                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        <!-- Botones -->
+        <div class="w-full space-y-4">
+            <a href="#" class="pill-btn block w-full py-4 rounded-full border border-white/10 text-white font-medium text-sm hover:text-lime-400">Ver Portafolio</a>
+            <a href="#" class="pill-btn block w-full py-4 rounded-full border border-white/10 text-white font-medium text-sm hover:text-lime-400">Nuestros Servicios</a>
+            <a href="#" class="pill-btn block w-full py-4 rounded-full border border-white/10 text-white font-medium text-sm hover:text-lime-400">Agenda una Asesoría</a>
+        </div>
+
+        <!-- Footer Social -->
+        <div class="flex gap-6 mt-10">
+            <a href="#" class="text-white/60 hover:text-purple-400 transition-colors">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             </a>
-            <a href="https://wa.me/message/VF4F3N3MHXZZA1" class="social-icon" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <a href="https://wa.me/message/VF4F3N3MHXZZA1" target="_blank" class="text-white/60 hover:text-lime-400 transition-colors">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             </a>
-        </footer>
+        </div>
     </div>
-
 </body>
 </html>

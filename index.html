@@ -23,24 +23,16 @@
             padding: 0;
         }
 
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 2rem 1.5rem;
-            margin: 0;
-            
-            /* USANDO TU IMAGEN DE FONDO */
-            background-image: url('tarjeta.png');
-            background-size: cover;
-            background-position: center;
+ /* Gradientes de luz difusos en Alta Definición (HD) */
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(142, 255, 1, 0.18) 0%, transparent 60%),
+                radial-gradient(circle at 85% 85%, rgba(126, 59, 237, 0.18) 0%, transparent 60%),
+                radial-gradient(circle at 60% 0%, rgba(142, 255, 1, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 10% 90%, rgba(142, 255, 1, 0.12) 0%, transparent 50%);
             background-attachment: fixed;
+            position: relative;
         }
-
+        
         .container {
             width: 100%;
             max-width: 420px;
